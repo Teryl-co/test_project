@@ -15,6 +15,7 @@ import java.util.List;
 import by.lynd.hotels.Adapters.HotelAdapter;
 
 import by.lynd.hotels.JSON.RetroClient;
+import by.lynd.hotels.Model.Contract;
 import by.lynd.hotels.Model.Hotel;
 import by.lynd.hotels.Model.HotelList;
 import by.lynd.hotels.R;
@@ -23,7 +24,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Contract.View{
     private List<Hotel> hotels;
 
     @Override
@@ -45,12 +46,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
-        setUpListView();
-    }
-
-    public void setUpListView() {
-        RetroClient.getStoreHotels(callback);
     }
 
     public void setUpOnClickListener(ListView listView) {
@@ -62,4 +57,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void showHotels() {
+
+    }
 }
