@@ -44,8 +44,8 @@ public class MainActivity extends AppCompatActivity implements Contract.View{
 
         presenter = new Presenter(this);
 
-        ListView listView = findViewById(R.id.list_view_hotels);
-        listView.setOnItemClickListener((parent, view, position, id) -> presenter.onItemWasClicked(position));
+        this.listView = findViewById(R.id.list_view_hotels);
+        this.listView.setOnItemClickListener((parent, view, position, id) -> presenter.onItemWasClicked(position));
     }
 
     @Override

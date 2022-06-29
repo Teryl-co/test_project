@@ -4,7 +4,11 @@ import java.util.List;
 
 import by.lynd.hotels.Model.Contract;
 import by.lynd.hotels.Model.Hotel;
+import by.lynd.hotels.Model.HotelList;
 import by.lynd.hotels.Model.HotelModel;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class Presenter implements Contract.Presenter{
     private Contract.View activity;
@@ -30,7 +34,19 @@ public class Presenter implements Contract.Presenter{
     }
 
     private void init() {
-        this.hotels = model.loadHotels();
-        activity.showHotels(this.hotels);
+        model.loadHotels(new Callback<HotelList>() {
+            @Override
+            public void onResponse(Call<HotelList> call, Response<HotelList> response) {
+                if (response.isSuccessful() && response.body() != null) {
+                    hotels = response.body().getHotels();
+                    activity.showHotels(hotels);
+                }
+            }
+
+            @Override
+            public void onFailure(Call<HotelList> call, Throwable t) {
+                t.printStackTrace();
+            }
+        });
     }
 }

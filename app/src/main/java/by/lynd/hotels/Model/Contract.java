@@ -2,6 +2,8 @@ package by.lynd.hotels.Model;
 
 import java.util.List;
 
+import retrofit2.Callback;
+
 public interface Contract {
 
     interface View {
@@ -15,6 +17,6 @@ public interface Contract {
     }
 
     interface Model {
-        List<Hotel> loadHotels();
+        void loadHotels(Callback<HotelList> listOfHotels);
     }
 }

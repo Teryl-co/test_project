@@ -12,7 +12,7 @@ public class Hotel implements Serializable {
     private String name;
     @SerializedName("desc")
     @Expose
-    private String desc;
+    private String description;
     @SerializedName("image")
     @Expose
     private String imageUrl;
@@ -37,12 +37,12 @@ public class Hotel implements Serializable {
         this.name = name;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getImageUrl() {
