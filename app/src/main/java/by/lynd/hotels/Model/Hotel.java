@@ -15,7 +15,7 @@ public class Hotel implements Serializable {
     private String desc;
     @SerializedName("image")
     @Expose
-    private String image;
+    private String imageUrl;
     @SerializedName("price")
     @Expose
     private Integer price;
@@ -45,12 +45,12 @@ public class Hotel implements Serializable {
         this.desc = desc;
     }
 
-    public String getImage() {
-        return image;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public Integer getPrice() {

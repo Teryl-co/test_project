@@ -22,7 +22,7 @@ public class HotelModel implements Contract.Model{
         listOfHotels = new Callback<HotelList>() {
             @Override
             public void onResponse(Call<HotelList> call, Response<HotelList> response) {
-                if (response.isSuccessful()) {
+                if (response.isSuccessful() && response.body() != null) {
                     hotels = response.body().getHotels();
                 }
             }
