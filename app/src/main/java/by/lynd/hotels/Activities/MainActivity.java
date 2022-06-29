@@ -26,27 +26,6 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
     private List<Hotel> hotels;
 
-    private Callback<HotelList> callback = new Callback<HotelList>() {
-        @Override
-        public void onResponse(Call<HotelList> call, Response<HotelList> response) {
-            if (response.isSuccessful()){
-                hotels = response.body().getHotels();
-                HotelAdapter hotelAdapter = new HotelAdapter(getApplicationContext(), 0, hotels);
-                ListView listView = findViewById(R.id.list_view_hotels);
-                listView.setAdapter(hotelAdapter);
-                setUpOnClickListener(listView);
-            } else {
-                hotels = new ArrayList<>();
-            }
-
-        }
-
-        @Override
-        public void onFailure(Call<HotelList> call, Throwable t) {
-            t.printStackTrace();
-        }
-    };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         SplashScreen.installSplashScreen(this);
