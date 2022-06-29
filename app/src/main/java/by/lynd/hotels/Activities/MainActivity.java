@@ -16,7 +16,7 @@ import by.lynd.hotels.Adapters.HotelAdapter;
 import by.lynd.hotels.Model.Contract;
 import by.lynd.hotels.Model.Hotel;
 import by.lynd.hotels.R;
-import by.lynd.hotels.presentars.Presenter;
+import by.lynd.hotels.presenters.Presenter;
 
 public class MainActivity extends AppCompatActivity implements Contract.View{
     private ListView listView;

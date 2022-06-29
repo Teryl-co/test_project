@@ -1,4 +1,4 @@
-package by.lynd.hotels.presentars;
+package by.lynd.hotels.presenters;
 
 import java.util.List;
 

@@ -10,9 +10,10 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+
 import by.lynd.hotels.Model.Hotel;
 import by.lynd.hotels.R;
-import by.lynd.hotels.Tasks.DownloadImageTask;
 
 public class DetailActivity extends Activity {
     private Hotel hotel;
@@ -45,7 +46,11 @@ public class DetailActivity extends Activity {
         TextView phone = findViewById(R.id.hotel_detail_phone);
         TextView description = findViewById(R.id.hotel_detail_desc);
 
-        new DownloadImageTask(image).execute(hotel.getImageUrl());
+        Glide
+                .with(this)
+                .load(hotel.getImageUrl())
+                .into(image);
+
         price.setText("Price: " + this.hotel.getPrice());
         email.setText("Email: " + this.hotel.getEmail());
         phone.setText("Phone: " + this.hotel.getNumber());

@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 import by.lynd.hotels.Model.Hotel;
@@ -36,7 +38,11 @@ public class HotelAdapter extends ArrayAdapter<Hotel> {
         TextView name = convertView.findViewById(R.id.hotel_name);
         TextView price = convertView.findViewById(R.id.hotel_price);
 
-        new DownloadImageTask(img).execute(hotel.getImageUrl());
+        Glide
+                .with(getContext())
+                .load(hotel.getImageUrl())
+                .into(img);
+
         name.setText(hotel.getName());
         price.setText("price: " + hotel.getPrice());
 
