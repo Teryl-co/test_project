@@ -1,4 +1,4 @@
-package by.lynd.hotels.JSON;
+package by.lynd.hotels.model.rest;
 
 import by.lynd.hotels.model.HotelList;
 

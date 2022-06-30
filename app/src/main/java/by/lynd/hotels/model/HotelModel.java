@@ -1,6 +1,6 @@
 package by.lynd.hotels.model;
 
-import by.lynd.hotels.JSON.RetroClient;
+import by.lynd.hotels.model.rest.RetroClient;
 import retrofit2.Callback;
 
 public class HotelModel implements Contract.Model{

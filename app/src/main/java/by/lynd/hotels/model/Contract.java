@@ -1,5 +1,7 @@
 package by.lynd.hotels.model;
 
+import android.content.Intent;
+
 import java.util.List;
 
 import by.lynd.hotels.adapters.HotelAdapter;
@@ -13,7 +15,10 @@ public interface Contract {
     }
 
     interface ItemView {
-
+        void setUpItemView(Hotel hotel);
+        void setUpCallButtonListener(String number);
+        void setUpEmailButtonListener(String... emails);
+        void setUpLocationButtonListener(String location);
     }
 
     interface MainPresenter {
@@ -21,7 +26,8 @@ public interface Contract {
     }
 
     interface ItemPresenter {
-
+        void handleIntent(Intent intent);
+        void setUpButtonListener();
     }
 
     interface Model {

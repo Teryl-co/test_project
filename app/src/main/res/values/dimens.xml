@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="image_size">200dp</dimen>
+    <dimen name="image_item_width">100dp</dimen>
+    <dimen name="image_item_height">90dp</dimen>
+    <dimen name="margin">10dp</dimen>
+    <dimen name="margin_start_button">20dp</dimen>
+    <dimen name="text_size">16dp</dimen>
+    <dimen name="margin_between_img_text">30dp</dimen>
+    <dimen name="recycler">0dp</dimen>
+</resources>

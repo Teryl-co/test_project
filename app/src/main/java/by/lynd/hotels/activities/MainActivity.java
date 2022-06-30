@@ -2,12 +2,11 @@ package by.lynd.hotels.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.view.ViewTreeObserver;
 
 import java.util.List;
 
@@ -27,21 +26,12 @@ public class MainActivity extends AppCompatActivity implements Contract.MainView
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final View content = findViewById(android.R.id.content);
-        content.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
-            @Override
-            public boolean onPreDraw() {
-//                if (hotels != null && DownloadImageTask.getQuantity() == hotels.size()) {
-//                    content.getViewTreeObserver().removeOnPreDrawListener(this);
-//                    return true;
-//                } else {
-//                    return false;
-//                }
-                return  true;
-            }
-        });
-
         listView = findViewById(R.id.list_hotels);
+        DividerItemDecoration mDividerItemDecoration = new DividerItemDecoration(
+                listView.getContext(),
+                DividerItemDecoration.VERTICAL
+        );
+        listView.addItemDecoration(mDividerItemDecoration);
 
         presenter = new MainPresenter(this);
         presenter.init();
@@ -54,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements Contract.MainView
 
     @Override
     public void sendIntent(Hotel hotel) {
-        Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
+        Intent intent = new Intent(getApplicationContext(), HotelDetailActivity.class);
         intent.putExtra(Hotel.class.getSimpleName(), hotel);
         startActivity(intent);
     }

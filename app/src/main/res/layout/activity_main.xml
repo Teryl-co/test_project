@@ -8,9 +8,9 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/list_hotels"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="8dp"
+        android:layout_width="@dimen/recycler"
+        android:layout_height="@dimen/recycler"
+        android:layout_margin="@dimen/margin"
         tools:listitem="@layout/hotel_item"
         app:layoutManager="LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"

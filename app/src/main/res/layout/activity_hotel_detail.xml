@@ -14,8 +14,8 @@
 
         <ImageView
             android:id="@+id/hotel_detail_image"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
+            android:layout_width="@dimen/image_size"
+            android:layout_height="@dimen/image_size"
             android:layout_gravity="center_horizontal"
             android:scaleType="centerCrop"/>
 
@@ -28,8 +28,8 @@
                 android:id="@+id/hotel_detail_price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginHorizontal="@dimen/margin"
+                android:layout_marginTop="@dimen/margin"
                 android:text="price"/>
 
             <LinearLayout
@@ -41,17 +41,16 @@
                     android:id="@+id/hotel_detail_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginTop="10dp"
-                    android:text="contacts"/>
+                    android:layout_marginHorizontal="@dimen/margin"
+                    android:layout_marginTop="@dimen/margin"/>
 
                 <Button
+                    android:id="@+id/button_send_email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="@dimen/margin_start_button"
                     android:text="@string/send_button"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="sendEmail"/>
+                    android:layout_gravity="center_horizontal"/>
 
             </LinearLayout>
 
@@ -64,36 +63,33 @@
                     android:id="@+id/hotel_detail_phone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="10dp"
-                    android:layout_marginTop="10dp"
-                    android:text="contacts"/>
+                    android:layout_marginHorizontal="@dimen/margin"
+                    android:layout_marginTop="@dimen/margin"/>
 
                 <Button
+                    android:id="@+id/button_call"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginStart="@dimen/margin_start_button"
                     android:text="@string/call_button"
-                    android:layout_gravity="center_horizontal"
-                    android:onClick="call"/>
+                    android:layout_gravity="center_horizontal"/>
 
             </LinearLayout>
 
             <Button
-                android:id="@+id/hotel_detail_location"
+                android:id="@+id/button_find_location"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="10dp"
-                android:onClick="findLocation"
+                android:layout_marginHorizontal="@dimen/margin"
+                android:layout_marginTop="@dimen/margin"
                 android:text="@string/find_location"/>
 
             <TextView
                 android:id="@+id/hotel_detail_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
-                android:layout_marginTop="10dp"
-                android:text="desc"/>
+                android:layout_marginHorizontal="@dimen/margin"
+                android:layout_marginTop="@dimen/margin"/>
 
         </LinearLayout>
 
