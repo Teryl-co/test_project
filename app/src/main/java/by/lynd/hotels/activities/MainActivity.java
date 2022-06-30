@@ -1,34 +1,34 @@
-package by.lynd.hotels.Activities;
+package by.lynd.hotels.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewTreeObserver;
-import android.widget.ListView;
 
 import java.util.List;
 
-import by.lynd.hotels.Adapters.HotelAdapter;
-
-import by.lynd.hotels.Model.Contract;
-import by.lynd.hotels.Model.Hotel;
+import by.lynd.hotels.adapters.HotelAdapter;
+import by.lynd.hotels.model.Contract;
+import by.lynd.hotels.model.Hotel;
 import by.lynd.hotels.R;
 import by.lynd.hotels.presenters.Presenter;
 
 public class MainActivity extends AppCompatActivity implements Contract.View{
-    private ListView listView;
+    private RecyclerView listView;
     private Contract.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         SplashScreen.installSplashScreen(this);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final View content = findViewById(android.R.id.content);
 
+        final View content = findViewById(android.R.id.content);
         content.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
             @Override
             public boolean onPreDraw() {
@@ -44,13 +44,12 @@ public class MainActivity extends AppCompatActivity implements Contract.View{
 
         presenter = new Presenter(this);
 
-        this.listView = findViewById(R.id.list_view_hotels);
-        this.listView.setOnItemClickListener((parent, view, position, id) -> presenter.onItemWasClicked(position));
+        listView = findViewById(R.id.list_hotels);
     }
 
     @Override
-    public void showHotels(List<Hotel> hotels) {
-        this.listView.setAdapter(new HotelAdapter(getApplicationContext(), 0, hotels));
+    public void showHotels(List<Hotel> hotels, HotelAdapter.OnHotelClickListener listener) {
+        this.listView.setAdapter(new HotelAdapter(this, hotels, listener));
     }
 
     @Override

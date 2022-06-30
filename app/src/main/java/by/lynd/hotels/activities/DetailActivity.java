@@ -1,5 +1,4 @@
-package by.lynd.hotels.Activities;
-
+package by.lynd.hotels.activities;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,7 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
-import by.lynd.hotels.Model.Hotel;
+import by.lynd.hotels.model.Hotel;
 import by.lynd.hotels.R;
 
 public class DetailActivity extends Activity {
@@ -22,6 +21,7 @@ public class DetailActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hotel_detail);
+
         getActionBar().setDisplayHomeAsUpEnabled(true);
         getHotelDetail();
     }

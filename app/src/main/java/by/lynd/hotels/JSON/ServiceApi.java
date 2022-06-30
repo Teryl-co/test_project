@@ -3,7 +3,7 @@ package by.lynd.hotels.JSON;
 
 
 
-import by.lynd.hotels.Model.HotelList;
+import by.lynd.hotels.model.HotelList;
 import retrofit2.Call;
 import retrofit2.http.GET;
 

@@ -40,5 +40,8 @@ dependencies {
     implementation group: 'androidx.core', name: 'core-splashscreen', version: '1.0.0-rc01'
     // https://mvnrepository.com/artifact/com.github.bumptech.glide/glide
     implementation group: 'com.github.bumptech.glide', name: 'glide', version: '4.13.2'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    // https://mvnrepository.com/artifact/androidx.recyclerview/recyclerview-selection
+    implementation group: 'androidx.recyclerview', name: 'recyclerview-selection', version: '1.1.0'
 
 }

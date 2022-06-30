@@ -1,4 +1,4 @@
-package by.lynd.hotels.Model;
+package by.lynd.hotels.model;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

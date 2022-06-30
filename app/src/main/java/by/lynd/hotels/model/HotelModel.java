@@ -1,4 +1,4 @@
-package by.lynd.hotels.Model;
+package by.lynd.hotels.model;
 
 import by.lynd.hotels.JSON.RetroClient;
 import retrofit2.Callback;

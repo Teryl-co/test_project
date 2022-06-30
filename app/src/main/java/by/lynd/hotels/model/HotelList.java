@@ -1,4 +1,4 @@
-package by.lynd.hotels.Model;
+package by.lynd.hotels.model;
 
 import java.util.List;
 import com.google.gson.annotations.Expose;

@@ -2,10 +2,10 @@ package by.lynd.hotels.presenters;
 
 import java.util.List;
 
-import by.lynd.hotels.Model.Contract;
-import by.lynd.hotels.Model.Hotel;
-import by.lynd.hotels.Model.HotelList;
-import by.lynd.hotels.Model.HotelModel;
+import by.lynd.hotels.model.Contract;
+import by.lynd.hotels.model.Hotel;
+import by.lynd.hotels.model.HotelList;
+import by.lynd.hotels.model.HotelModel;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -22,10 +22,10 @@ public class Presenter implements Contract.Presenter{
         init();
     }
 
+
     @Override
-    public void onItemWasClicked(int position) {
-        Hotel hotel = hotels.get(position);
-        activity.sendIntent(hotel);
+    public void onItemWasClicked() {
+
     }
 
     @Override
@@ -39,7 +39,7 @@ public class Presenter implements Contract.Presenter{
             public void onResponse(Call<HotelList> call, Response<HotelList> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     hotels = response.body().getHotels();
-                    activity.showHotels(hotels);
+                    activity.showHotels(hotels, hotel -> activity.sendIntent(hotel));
                 }
             }
 

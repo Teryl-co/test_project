@@ -1,18 +1,20 @@
-package by.lynd.hotels.Model;
+package by.lynd.hotels.model;
 
 import java.util.List;
 
+import by.lynd.hotels.adapters.HotelAdapter;
+import by.lynd.hotels.presenters.Presenter;
 import retrofit2.Callback;
 
 public interface Contract {
 
     interface View {
-        void showHotels(List<Hotel> hotels);
+        void showHotels(List<Hotel> hotels, HotelAdapter.OnHotelClickListener listener);
         void sendIntent(Hotel hotel);
     }
 
     interface Presenter {
-        void onItemWasClicked(int position);
+        void onItemWasClicked();
         void onDestroy();
     }
 
