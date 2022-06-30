@@ -2,15 +2,12 @@ package by.lynd.hotels.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.recyclerview.selection.ItemDetailsLookup;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -19,7 +16,6 @@ import java.util.List;
 
 import by.lynd.hotels.R;
 import by.lynd.hotels.model.Hotel;
-import by.lynd.hotels.presenters.Presenter;
 
 public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> {
     private List<Hotel> hotels;
@@ -37,10 +33,12 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
 
         public ViewHolder(View viewItem) {
             super(viewItem);
+
             viewItem.setOnClickListener(view -> {
                 Hotel hotel = hotels.get(getLayoutPosition());
                 listener.onHotelClick(hotel);
             });
+
             image = viewItem.findViewById(R.id.hotel_image);
             name = viewItem.findViewById(R.id.hotel_name);
             price = viewItem.findViewById(R.id.hotel_price);
@@ -68,7 +66,7 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.list_view_hotel, parent, false);
+        View view = inflater.inflate(R.layout.hotel_item, parent, false);
 
         return new ViewHolder(view);
     }

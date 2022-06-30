@@ -9,20 +9,22 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.bumptech.glide.Glide;
 
 import by.lynd.hotels.model.Hotel;
 import by.lynd.hotels.R;
 
-public class DetailActivity extends Activity {
+public class DetailActivity extends AppCompatActivity {
     private Hotel hotel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.hotel_detail);
+        setContentView(R.layout.activity_hotel_detail);
 
-        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getHotelDetail();
     }
 

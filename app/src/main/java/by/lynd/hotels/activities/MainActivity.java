@@ -15,16 +15,15 @@ import by.lynd.hotels.adapters.HotelAdapter;
 import by.lynd.hotels.model.Contract;
 import by.lynd.hotels.model.Hotel;
 import by.lynd.hotels.R;
-import by.lynd.hotels.presenters.Presenter;
+import by.lynd.hotels.presenters.MainPresenter;
 
-public class MainActivity extends AppCompatActivity implements Contract.View{
+public class MainActivity extends AppCompatActivity implements Contract.MainView {
     private RecyclerView listView;
-    private Contract.Presenter presenter;
+    private Contract.MainPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         SplashScreen.installSplashScreen(this);
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -42,9 +41,10 @@ public class MainActivity extends AppCompatActivity implements Contract.View{
             }
         });
 
-        presenter = new Presenter(this);
-
         listView = findViewById(R.id.list_hotels);
+
+        presenter = new MainPresenter(this);
+        presenter.init();
     }
 
     @Override

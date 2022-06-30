@@ -10,30 +10,18 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class Presenter implements Contract.Presenter{
-    private Contract.View activity;
+public class MainPresenter implements Contract.MainPresenter {
+    private Contract.MainView activity;
     private Contract.Model model;
 
     private List<Hotel> hotels;
 
-    public Presenter(Contract.View activity) {
+    public MainPresenter(Contract.MainView activity) {
         this.activity = activity;
         this.model = new HotelModel();
-        init();
     }
 
-
-    @Override
-    public void onItemWasClicked() {
-
-    }
-
-    @Override
-    public void onDestroy() {
-
-    }
-
-    private void init() {
+    public void init() {
         model.loadHotels(new Callback<HotelList>() {
             @Override
             public void onResponse(Call<HotelList> call, Response<HotelList> response) {

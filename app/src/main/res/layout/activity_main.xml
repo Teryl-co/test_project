@@ -11,7 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="8dp"
-        tools:listitem="@layout/list_view_hotel"
+        tools:listitem="@layout/hotel_item"
         app:layoutManager="LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
