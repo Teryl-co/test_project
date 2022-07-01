@@ -6,6 +6,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.bumptech.glide.Glide;
 
 import by.lynd.hotels.contract.ItemContract;
@@ -13,7 +15,7 @@ import by.lynd.hotels.model.Hotel;
 import by.lynd.hotels.R;
 import by.lynd.hotels.presenter.DetailPresenter;
 
-public class HotelDetailActivity extends UtilActivity implements ItemContract.View{
+public class HotelDetailActivity extends AppCompatActivity implements ItemContract.View{
     private ItemContract.Presenter presenter;
 
     @Override
@@ -60,18 +62,18 @@ public class HotelDetailActivity extends UtilActivity implements ItemContract.Vi
     @Override
     public void setUpCallButtonListener(String number) {
         Button button = findViewById(R.id.button_call);
-        button.setOnClickListener(view -> call(number));
+        button.setOnClickListener(view -> startActivity(UtilActivity.call(number)));
     }
 
     @Override
     public void setUpEmailButtonListener(String... emails) {
         Button button = findViewById(R.id.button_send_email);
-        button.setOnClickListener(view -> sendEmail(emails));
+        button.setOnClickListener(view -> startActivity(UtilActivity.sendEmail(emails)));
     }
 
     @Override
     public void setUpLocationButtonListener(String location) {
         Button button = findViewById(R.id.button_find_location);
-        button.setOnClickListener(view -> findLocation(location));
+        button.setOnClickListener(view -> startActivity(UtilActivity.findLocation(location)));
     }
 }

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -16,9 +17,10 @@ import by.lynd.hotels.model.Hotel;
 import by.lynd.hotels.R;
 import by.lynd.hotels.presenter.MainPresenter;
 
-public class MainActivity extends AppCompatActivity implements MainContract.View {
+public class MainActivity extends AppCompatActivity implements MainContract.View, HotelAdapter.OnHotelClickListener {
     private RecyclerView listView;
     private MainContract.Presenter presenter;
+    private HotelAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,18 +34,40 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
                 DividerItemDecoration.VERTICAL
         );
         listView.addItemDecoration(mDividerItemDecoration);
-
         presenter = new MainPresenter(this);
-        presenter.getData();
+        adapter = new HotelAdapter(getApplicationContext());
+        adapter.setOnHotelClickListener(this);
+        listView.setAdapter(adapter);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        presenter.start();
     }
 
     @Override
     public void showHotels(List<Hotel> hotels) {
-        this.listView.setAdapter(new HotelAdapter(this, hotels));
+        adapter.showHotels(hotels);
     }
 
     @Override
-    public void sendIntent(Hotel hotel) {
+    public void shotToast() {
+        Toast.makeText(this, "No available hotels", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public boolean isTheListIsEmpty() {
+        return true;
+    }
+
+    @Override
+    public void appendHotel(List<Hotel> hotels) {
+
+    }
+
+    @Override
+    public void onHotelClick(Hotel hotel) {
         Intent intent = new Intent(getApplicationContext(), HotelDetailActivity.class);
         intent.putExtra(Hotel.class.getSimpleName(), hotel);
         startActivity(intent);

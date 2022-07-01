@@ -13,11 +13,14 @@ public interface MainContract {
     }
 
     interface View {
+        void appendHotel(List<Hotel> hotels);
         void showHotels(List<Hotel> hotels);
-        void sendIntent(Hotel hotel);
+        void shotToast();
+        boolean isTheListIsEmpty();
     }
 
     interface Presenter {
         void getData();
+        void start();
     }
 }

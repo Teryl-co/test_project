@@ -14,8 +14,6 @@ public class MainPresenter implements MainContract.Presenter {
     private MainContract.View activity;
     private MainContract.Model model;
 
-    private boolean isLoading = false;
-
     private List<Hotel> hotels;
 
     public MainPresenter(MainContract.View activity) {
@@ -31,13 +29,20 @@ public class MainPresenter implements MainContract.Presenter {
                 if (response.isSuccessful() && response.body() != null) {
                     hotels = response.body().getHotels();
                     activity.showHotels(hotels);
+                } else {
+                    activity.shotToast();
                 }
             }
 
             @Override
             public void onFailure(Call<HotelList> call, Throwable t) {
-
+                t.printStackTrace();
             }
         });
+    }
+
+    @Override
+    public void start() {
+        getData();
     }
 }

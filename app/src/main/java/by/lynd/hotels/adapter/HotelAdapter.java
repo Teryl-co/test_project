@@ -2,6 +2,7 @@ package by.lynd.hotels.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import by.lynd.hotels.R;
@@ -27,6 +29,7 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+
         private ImageView image;
         private TextView name;
         private TextView price;
@@ -55,11 +58,26 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
         public TextView getPrice() {
             return price;
         }
+
     }
 
-    public HotelAdapter(Context context, List<Hotel> hotels) {
-        this.hotels = hotels;
+    public HotelAdapter(Context context) {
         this.inflater = LayoutInflater.from(context);
+        hotels = new ArrayList<>();
+    }
+
+    public void appendHotels(List<Hotel> hotelList) {
+        this.hotels.addAll(hotelList);
+        notifyDataSetChanged();
+    }
+
+    public void showHotels(List<Hotel> hotelList) {
+        hotels.clear();
+        appendHotels(hotelList);
+    }
+
+    public void setOnHotelClickListener(OnHotelClickListener onHotelClickListener){
+        this.listener = onHotelClickListener;
     }
 
     @NonNull
