@@ -1,20 +1,19 @@
-package by.lynd.hotels.presenters;
+package by.lynd.hotels.presenter;
 
 import android.content.Intent;
 
-import by.lynd.hotels.model.Contract;
+import by.lynd.hotels.contract.ItemContract;
+import by.lynd.hotels.contract.MainContract;
 import by.lynd.hotels.model.Hotel;
-import by.lynd.hotels.model.HotelModel;
 
-public class DetailPresenter implements Contract.ItemPresenter{
+public class DetailPresenter implements ItemContract.Presenter{
     private Hotel hotel;
 
-    private Contract.ItemView activity;
-    private Contract.Model model;
+    private ItemContract.View activity;
+    private MainContract.Model model;
 
-    public DetailPresenter(Contract.ItemView activity) {
+    public DetailPresenter(ItemContract.View activity) {
         this.activity = activity;
-        this.model = new HotelModel();
     }
 
     @Override

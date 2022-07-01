@@ -1,4 +1,4 @@
-package by.lynd.hotels.activities;
+package by.lynd.hotels.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

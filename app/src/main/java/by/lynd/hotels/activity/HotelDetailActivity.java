@@ -1,4 +1,4 @@
-package by.lynd.hotels.activities;
+package by.lynd.hotels.activity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -8,13 +8,13 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
-import by.lynd.hotels.model.Contract;
+import by.lynd.hotels.contract.ItemContract;
 import by.lynd.hotels.model.Hotel;
 import by.lynd.hotels.R;
-import by.lynd.hotels.presenters.DetailPresenter;
+import by.lynd.hotels.presenter.DetailPresenter;
 
-public class HotelDetailActivity extends UtilActivity implements Contract.ItemView{
-    private Contract.ItemPresenter presenter;
+public class HotelDetailActivity extends UtilActivity implements ItemContract.View{
+    private ItemContract.Presenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

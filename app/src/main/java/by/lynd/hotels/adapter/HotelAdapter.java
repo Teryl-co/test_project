@@ -1,4 +1,4 @@
-package by.lynd.hotels.adapters;
+package by.lynd.hotels.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -27,9 +27,9 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private final ImageView image;
-        private final TextView name;
-        private final TextView price;
+        private ImageView image;
+        private TextView name;
+        private TextView price;
 
         public ViewHolder(View viewItem) {
             super(viewItem);
@@ -57,10 +57,9 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
         }
     }
 
-    public HotelAdapter(Context context, List<Hotel> hotels, OnHotelClickListener onHotelClickListener) {
+    public HotelAdapter(Context context, List<Hotel> hotels) {
         this.hotels = hotels;
         this.inflater = LayoutInflater.from(context);
-        this.listener = onHotelClickListener;
     }
 
     @NonNull

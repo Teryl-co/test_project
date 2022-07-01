@@ -1,4 +1,4 @@
-package by.lynd.hotels.model.rest;
+package by.lynd.hotels.rest;
 
 import by.lynd.hotels.model.HotelList;
 import retrofit2.Call;

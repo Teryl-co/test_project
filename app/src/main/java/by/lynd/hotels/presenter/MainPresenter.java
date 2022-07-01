@@ -1,39 +1,42 @@
-package by.lynd.hotels.presenters;
+package by.lynd.hotels.presenter;
 
 import java.util.List;
 
-import by.lynd.hotels.model.Contract;
+import by.lynd.hotels.contract.MainContract;
 import by.lynd.hotels.model.Hotel;
 import by.lynd.hotels.model.HotelList;
-import by.lynd.hotels.model.HotelModel;
+import by.lynd.hotels.rest.RetroClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MainPresenter implements Contract.MainPresenter {
-    private Contract.MainView activity;
-    private Contract.Model model;
+public class MainPresenter implements MainContract.Presenter {
+    private MainContract.View activity;
+    private MainContract.Model model;
+
+    private boolean isLoading = false;
 
     private List<Hotel> hotels;
 
-    public MainPresenter(Contract.MainView activity) {
+    public MainPresenter(MainContract.View activity) {
         this.activity = activity;
-        this.model = new HotelModel();
+        this.model = new RetroClient();
     }
 
-    public void init() {
+    @Override
+    public void getData() {
         model.loadHotels(new Callback<HotelList>() {
             @Override
             public void onResponse(Call<HotelList> call, Response<HotelList> response) {
                 if (response.isSuccessful() && response.body() != null) {
                     hotels = response.body().getHotels();
-                    activity.showHotels(hotels, hotel -> activity.sendIntent(hotel));
+                    activity.showHotels(hotels);
                 }
             }
 
             @Override
             public void onFailure(Call<HotelList> call, Throwable t) {
-                t.printStackTrace();
+
             }
         });
     }
