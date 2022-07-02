@@ -41,7 +41,7 @@ public class MainPresenter implements MainContract.Presenter {
 
             @Override
             public void onFailure(Call<HotelList> call, Throwable t) {
-                t.printStackTrace();
+                activity.shotToast(NO_AVAILABLE_SERVER);
             }
         });
     }
