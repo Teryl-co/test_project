@@ -1,20 +1,20 @@
 package by.lynd.hotels.activity;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.splashscreen.SplashScreen;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
-import android.os.Bundle;
-import android.widget.Toast;
-
 import java.util.List;
 
+import by.lynd.hotels.R;
 import by.lynd.hotels.adapter.HotelAdapter;
 import by.lynd.hotels.contract.MainContract;
 import by.lynd.hotels.model.Hotel;
-import by.lynd.hotels.R;
 import by.lynd.hotels.presenter.MainPresenter;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View, HotelAdapter.OnHotelClickListener {

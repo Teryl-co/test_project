@@ -1,10 +1,11 @@
 package by.lynd.hotels.model;
 
-import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class HotelList{
+import java.util.List;
+
+public class HotelList {
 
     @SerializedName("hotels")
     @Expose

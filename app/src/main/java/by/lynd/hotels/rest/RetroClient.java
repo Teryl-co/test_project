@@ -2,7 +2,6 @@ package by.lynd.hotels.rest;
 
 import by.lynd.hotels.contract.MainContract;
 import by.lynd.hotels.model.HotelList;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Retrofit;

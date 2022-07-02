@@ -2,7 +2,6 @@ package by.lynd.hotels.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -23,6 +22,50 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
     private List<Hotel> hotels;
     private LayoutInflater inflater;
     private OnHotelClickListener listener;
+
+    public HotelAdapter(Context context) {
+        this.inflater = LayoutInflater.from(context);
+        hotels = new ArrayList<>();
+    }
+
+    public void appendHotels(List<Hotel> hotelList) {
+        this.hotels.addAll(hotelList);
+        notifyDataSetChanged();
+    }
+
+    public void showHotels(List<Hotel> hotelList) {
+        hotels.clear();
+        appendHotels(hotelList);
+    }
+
+    public void setOnHotelClickListener(OnHotelClickListener onHotelClickListener) {
+        this.listener = onHotelClickListener;
+    }
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = inflater.inflate(R.layout.hotel_item, parent, false);
+        return new ViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        Hotel hotel = hotels.get(position);
+
+        Glide
+                .with(inflater.getContext())
+                .load(hotel.getImageUrl())
+                .into(holder.getImage());
+
+        holder.getName().setText(hotel.getName());
+        holder.getPrice().setText(String.valueOf(hotel.getPrice()));
+    }
+
+    @Override
+    public int getItemCount() {
+        return hotels.size();
+    }
 
     public interface OnHotelClickListener {
         void onHotelClick(Hotel hotel);
@@ -59,49 +102,5 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
             return price;
         }
 
-    }
-
-    public HotelAdapter(Context context) {
-        this.inflater = LayoutInflater.from(context);
-        hotels = new ArrayList<>();
-    }
-
-    public void appendHotels(List<Hotel> hotelList) {
-        this.hotels.addAll(hotelList);
-        notifyDataSetChanged();
-    }
-
-    public void showHotels(List<Hotel> hotelList) {
-        hotels.clear();
-        appendHotels(hotelList);
-    }
-
-    public void setOnHotelClickListener(OnHotelClickListener onHotelClickListener){
-        this.listener = onHotelClickListener;
-    }
-
-    @NonNull
-    @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.hotel_item, parent, false);
-        return new ViewHolder(view);
-    }
-
-    @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Hotel hotel = hotels.get(position);
-
-        Glide
-                .with(inflater.getContext())
-                .load(hotel.getImageUrl())
-                .into(holder.getImage());
-
-        holder.getName().setText(hotel.getName());
-        holder.getPrice().setText(String.valueOf(hotel.getPrice()));
-    }
-
-    @Override
-    public int getItemCount() {
-        return hotels.size();
     }
 }

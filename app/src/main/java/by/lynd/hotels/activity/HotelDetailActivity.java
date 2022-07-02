@@ -10,12 +10,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 
+import by.lynd.hotels.R;
 import by.lynd.hotels.contract.ItemContract;
 import by.lynd.hotels.model.Hotel;
-import by.lynd.hotels.R;
 import by.lynd.hotels.presenter.DetailPresenter;
 
-public class HotelDetailActivity extends AppCompatActivity implements ItemContract.View{
+public class HotelDetailActivity extends AppCompatActivity implements ItemContract.View {
     private ItemContract.Presenter presenter;
 
     @Override
