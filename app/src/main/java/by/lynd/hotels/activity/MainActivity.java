@@ -52,13 +52,13 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     }
 
     @Override
-    public void shotToast() {
-        Toast.makeText(this, "No available hotels", Toast.LENGTH_LONG).show();
+    public void shotToast(String text) {
+        Toast.makeText(this, text, Toast.LENGTH_LONG).show();
     }
 
     @Override
     public boolean isTheListIsEmpty() {
-        return true;
+        return adapter.isTheListEmpty();
     }
 
     @Override

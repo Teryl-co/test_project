@@ -11,6 +11,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class MainPresenter implements MainContract.Presenter {
+    private static final String NO_AVAILABLE_HOTELS = "No available hotels";
+    private static final String NO_AVAILABLE_SERVER = "Server is down";
     private MainContract.View activity;
     private MainContract.Model model;
 
@@ -29,8 +31,10 @@ public class MainPresenter implements MainContract.Presenter {
                 if (response.isSuccessful() && response.body() != null) {
                     hotels = response.body().getHotels();
                     activity.showHotels(hotels);
+                } else if (response.body() == null){
+                    activity.shotToast(NO_AVAILABLE_HOTELS);
                 } else {
-                    activity.shotToast();
+                    activity.shotToast(NO_AVAILABLE_SERVER);
                 }
             }
 
@@ -43,6 +47,8 @@ public class MainPresenter implements MainContract.Presenter {
 
     @Override
     public void start() {
-        getData();
+        if (activity.isTheListIsEmpty()) {
+            getData();
+        }
     }
 }

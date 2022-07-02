@@ -23,6 +23,10 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
     private LayoutInflater inflater;
     private OnHotelClickListener listener;
 
+    public boolean isTheListEmpty() {
+        return hotels.isEmpty();
+    }
+
     public HotelAdapter(Context context) {
         this.inflater = LayoutInflater.from(context);
         hotels = new ArrayList<>();

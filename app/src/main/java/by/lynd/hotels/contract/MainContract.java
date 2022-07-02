@@ -16,7 +16,7 @@ public interface MainContract {
 
         void showHotels(List<Hotel> hotels);
 
-        void shotToast();
+        void shotToast(String text);
 
         boolean isTheListIsEmpty();
     }
