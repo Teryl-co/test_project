@@ -1,10 +1,11 @@
 package by.lynd.hotels.contract;
 
-import java.util.List;
-
 import by.lynd.hotels.model.Hotel;
 import by.lynd.hotels.model.HotelList;
 import retrofit2.Callback;
+
+import java.util.List;
+
 
 public interface MainContract {
     interface Model {
@@ -14,11 +15,11 @@ public interface MainContract {
     interface View {
         void appendHotel(List<Hotel> hotels);
 
+        boolean isTheListIsEmpty();
+
         void showHotels(List<Hotel> hotels);
 
         void shotToast(String text);
-
-        boolean isTheListIsEmpty();
     }
 
     interface Presenter {

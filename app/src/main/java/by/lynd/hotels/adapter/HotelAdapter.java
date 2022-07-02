@@ -10,22 +10,19 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import by.lynd.hotels.R;
+import by.lynd.hotels.model.Hotel;
+
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import by.lynd.hotels.R;
-import by.lynd.hotels.model.Hotel;
 
 public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> {
     private List<Hotel> hotels;
     private LayoutInflater inflater;
     private OnHotelClickListener listener;
-
-    public boolean isTheListEmpty() {
-        return hotels.isEmpty();
-    }
 
     public HotelAdapter(Context context) {
         this.inflater = LayoutInflater.from(context);
@@ -37,13 +34,17 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
         notifyDataSetChanged();
     }
 
-    public void showHotels(List<Hotel> hotelList) {
-        hotels.clear();
-        appendHotels(hotelList);
+    public boolean isTheListEmpty() {
+        return hotels.isEmpty();
     }
 
     public void setOnHotelClickListener(OnHotelClickListener onHotelClickListener) {
         this.listener = onHotelClickListener;
+    }
+
+    public void showHotels(List<Hotel> hotelList) {
+        hotels.clear();
+        appendHotels(hotelList);
     }
 
     @NonNull
@@ -76,7 +77,6 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-
         private ImageView image;
         private TextView name;
         private TextView price;

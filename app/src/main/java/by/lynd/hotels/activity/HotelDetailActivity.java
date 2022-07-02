@@ -6,14 +6,15 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.bumptech.glide.Glide;
-
 import by.lynd.hotels.R;
 import by.lynd.hotels.contract.ItemContract;
 import by.lynd.hotels.model.Hotel;
 import by.lynd.hotels.presenter.DetailPresenter;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.bumptech.glide.Glide;
+
 
 public class HotelDetailActivity extends AppCompatActivity implements ItemContract.View {
     private ItemContract.Presenter presenter;
@@ -25,6 +26,11 @@ public class HotelDetailActivity extends AppCompatActivity implements ItemContra
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         presenter = new DetailPresenter(this);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
         presenter.handleIntent(getIntent());
         presenter.setUpButtonListener();
     }
@@ -38,6 +44,24 @@ public class HotelDetailActivity extends AppCompatActivity implements ItemContra
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void setUpCallButtonListener(String number) {
+        Button button = findViewById(R.id.button_call);
+        button.setOnClickListener(view -> startActivity(UtilActivity.call(number)));
+    }
+
+    @Override
+    public void setUpEmailButtonListener(String... emails) {
+        Button button = findViewById(R.id.button_send_email);
+        button.setOnClickListener(view -> startActivity(UtilActivity.sendEmail(emails)));
+    }
+
+    @Override
+    public void setUpLocationButtonListener(String location) {
+        Button button = findViewById(R.id.button_find_location);
+        button.setOnClickListener(view -> startActivity(UtilActivity.findLocation(location)));
     }
 
     @Override
@@ -57,23 +81,5 @@ public class HotelDetailActivity extends AppCompatActivity implements ItemContra
         email.setText("Email: " + hotel.getEmail());
         phone.setText("Phone: " + hotel.getNumber());
         description.setText("Description:\n" + hotel.getDescription());
-    }
-
-    @Override
-    public void setUpCallButtonListener(String number) {
-        Button button = findViewById(R.id.button_call);
-        button.setOnClickListener(view -> startActivity(UtilActivity.call(number)));
-    }
-
-    @Override
-    public void setUpEmailButtonListener(String... emails) {
-        Button button = findViewById(R.id.button_send_email);
-        button.setOnClickListener(view -> startActivity(UtilActivity.sendEmail(emails)));
-    }
-
-    @Override
-    public void setUpLocationButtonListener(String location) {
-        Button button = findViewById(R.id.button_find_location);
-        button.setOnClickListener(view -> startActivity(UtilActivity.findLocation(location)));
     }
 }

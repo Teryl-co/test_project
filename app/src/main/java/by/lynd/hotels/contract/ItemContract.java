@@ -13,11 +13,11 @@ public interface ItemContract {
     }
 
     interface View {
-        void setUpItemView(Hotel hotel);
-
         void setUpCallButtonListener(String number);
 
         void setUpEmailButtonListener(String... emails);
+
+        void setUpItemView(Hotel hotel);
 
         void setUpLocationButtonListener(String location);
     }

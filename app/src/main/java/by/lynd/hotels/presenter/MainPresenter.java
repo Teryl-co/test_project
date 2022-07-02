@@ -1,11 +1,12 @@
 package by.lynd.hotels.presenter;
 
-import java.util.List;
-
 import by.lynd.hotels.contract.MainContract;
 import by.lynd.hotels.model.Hotel;
 import by.lynd.hotels.model.HotelList;
 import by.lynd.hotels.rest.RetroClient;
+
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -13,9 +14,9 @@ import retrofit2.Response;
 public class MainPresenter implements MainContract.Presenter {
     private static final String NO_AVAILABLE_HOTELS = "No available hotels";
     private static final String NO_AVAILABLE_SERVER = "Server is down";
-    private MainContract.View activity;
-    private MainContract.Model model;
 
+    private MainContract.Model model;
+    private MainContract.View activity;
     private List<Hotel> hotels;
 
     public MainPresenter(MainContract.View activity) {
