@@ -12,13 +12,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import by.lynd.hotels.R;
 import by.lynd.hotels.adapter.HotelAdapter;
 import by.lynd.hotels.contract.MainContract;
+import by.lynd.hotels.listener.OnHotelClickListener;
 import by.lynd.hotels.model.Hotel;
 import by.lynd.hotels.presenter.MainPresenter;
 
 import java.util.List;
 
 
-public class MainActivity extends AppCompatActivity implements MainContract.View, HotelAdapter.OnHotelClickListener {
+public class MainActivity extends AppCompatActivity implements MainContract.View, OnHotelClickListener {
     private MainContract.Presenter presenter;
     private HotelAdapter adapter;
     private RecyclerView listView;

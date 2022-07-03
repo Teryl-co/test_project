@@ -6,12 +6,13 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import by.lynd.hotels.R;
 import by.lynd.hotels.contract.ItemContract;
 import by.lynd.hotels.model.Hotel;
 import by.lynd.hotels.presenter.DetailPresenter;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 
