@@ -32,7 +32,7 @@ public class MainPresenter implements MainContract.Presenter {
                 if (response.isSuccessful() && response.body() != null) {
                     hotels = response.body().getHotels();
                     activity.showHotels(hotels);
-                } else if (response.body() == null){
+                } else if (response.body() == null) {
                     activity.shotToast(NO_AVAILABLE_HOTELS);
                 } else {
                     activity.shotToast(NO_AVAILABLE_SERVER);
@@ -52,5 +52,4 @@ public class MainPresenter implements MainContract.Presenter {
             getData();
         }
     }
-
 }

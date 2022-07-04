@@ -20,43 +20,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> {
-    private List<Hotel> hotels;
-    private LayoutInflater inflater;
+    private final List<Hotel> hotels;
+    private final LayoutInflater inflater;
     private OnHotelClickListener listener;
-
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        private ImageView image;
-        private TextView name;
-        private TextView price;
-
-        public ViewHolder(View viewItem) {
-            super(viewItem);
-
-            viewItem.setOnClickListener(view -> {
-                Hotel hotel = hotels.get(getLayoutPosition());
-                listener.onHotelClick(hotel);
-            });
-
-            image = viewItem.findViewById(R.id.hotel_image);
-            name = viewItem.findViewById(R.id.hotel_name);
-            price = viewItem.findViewById(R.id.hotel_price);
-        }
-
-        public ImageView getImage() {
-            return image;
-        }
-
-        public TextView getName() {
-            return name;
-        }
-
-        public TextView getPrice() {
-            return price;
-        }
-
-    }
-
-
 
     public HotelAdapter(Context context) {
         this.inflater = LayoutInflater.from(context);
@@ -88,11 +54,6 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
         return hotels.size();
     }
 
-    public void appendHotels(List<Hotel> hotelList) {
-        this.hotels.addAll(hotelList);
-        notifyDataSetChanged();
-    }
-
     public boolean isTheListEmpty() {
         return hotels.isEmpty();
     }
@@ -100,8 +61,41 @@ public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> 
     public void setOnHotelClickListener(OnHotelClickListener onHotelClickListener) {
         this.listener = onHotelClickListener;
     }
+
     public void showHotels(List<Hotel> hotelList) {
-        hotels.clear();
-        appendHotels(hotelList);
+        this.hotels.clear();
+        this.hotels.addAll(hotelList);
+        notifyDataSetChanged();
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        private final ImageView image;
+        private final TextView name;
+        private final TextView price;
+
+        public ViewHolder(View viewItem) {
+            super(viewItem);
+
+            viewItem.setOnClickListener(view -> {
+                Hotel hotel = hotels.get(getLayoutPosition());
+                listener.onHotelClick(hotel);
+            });
+
+            image = viewItem.findViewById(R.id.hotel_image);
+            name = viewItem.findViewById(R.id.hotel_name);
+            price = viewItem.findViewById(R.id.hotel_price);
+        }
+
+        public ImageView getImage() {
+            return image;
+        }
+
+        public TextView getName() {
+            return name;
+        }
+
+        public TextView getPrice() {
+            return price;
+        }
     }
 }

@@ -28,5 +28,4 @@ public class DetailPresenter implements ItemContract.Presenter {
         activity.setUpEmailButtonListener(this.hotel.getEmail());
         activity.setUpLocationButtonListener(this.hotel.getLocale());
     }
-
 }

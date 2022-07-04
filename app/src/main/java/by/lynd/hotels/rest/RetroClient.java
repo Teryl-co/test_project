@@ -29,5 +29,4 @@ public class RetroClient implements MainContract.Model {
         Call<HotelList> call = serviceApi.loadHotels();
         call.enqueue(callback);
     }
-
 }

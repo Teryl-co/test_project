@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.net.Uri;
 
 public class UtilActivity {
-
     public static Intent sendEmail(String... emails) {
         Intent sendIntent = new Intent(Intent.ACTION_SEND);
         sendIntent.setType("message/rfc822");
