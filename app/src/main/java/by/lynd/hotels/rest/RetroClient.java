@@ -1,6 +1,7 @@
 package by.lynd.hotels.rest;
 
 import by.lynd.hotels.contract.MainContract;
+import by.lynd.hotels.model.Hotel;
 import by.lynd.hotels.model.HotelList;
 
 import retrofit2.Call;
@@ -28,4 +29,5 @@ public class RetroClient implements MainContract.Model {
         Call<HotelList> call = serviceApi.loadHotels();
         call.enqueue(callback);
     }
+
 }

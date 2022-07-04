@@ -13,9 +13,7 @@ import by.lynd.hotels.contract.ItemContract;
 import by.lynd.hotels.model.Hotel;
 import by.lynd.hotels.presenter.DetailPresenter;
 
-
 import com.bumptech.glide.Glide;
-
 
 public class HotelDetailActivity extends AppCompatActivity implements ItemContract.View {
     private ItemContract.Presenter presenter;
@@ -32,7 +30,7 @@ public class HotelDetailActivity extends AppCompatActivity implements ItemContra
     @Override
     protected void onStart() {
         super.onStart();
-        presenter.handleIntent(getIntent());
+        presenter.handleHotel(getIntent());
         presenter.setUpButtonListener();
     }
 

@@ -18,7 +18,6 @@ import by.lynd.hotels.presenter.MainPresenter;
 
 import java.util.List;
 
-
 public class MainActivity extends AppCompatActivity implements MainContract.View, OnHotelClickListener {
     private MainContract.Presenter presenter;
     private HotelAdapter adapter;
@@ -47,11 +46,6 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     protected void onStart() {
         super.onStart();
         presenter.start();
-    }
-
-    @Override
-    public void appendHotel(List<Hotel> hotels) {
-
     }
 
     @Override

@@ -19,8 +19,6 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 public class HotelAdapter extends RecyclerView.Adapter<HotelAdapter.ViewHolder> {
     private List<Hotel> hotels;
     private LayoutInflater inflater;

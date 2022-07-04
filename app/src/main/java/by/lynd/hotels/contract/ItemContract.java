@@ -7,7 +7,7 @@ import by.lynd.hotels.model.Hotel;
 public interface ItemContract {
 
     interface Presenter {
-        void handleIntent(Intent intent);
+        void handleHotel(Intent intent);
 
         void setUpButtonListener();
     }

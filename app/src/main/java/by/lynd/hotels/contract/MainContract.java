@@ -6,15 +6,12 @@ import retrofit2.Callback;
 
 import java.util.List;
 
-
 public interface MainContract {
     interface Model {
         void loadHotels(Callback<HotelList> listOfHotels);
     }
 
     interface View {
-        void appendHotel(List<Hotel> hotels);
-
         boolean isTheListIsEmpty();
 
         void showHotels(List<Hotel> hotels);
