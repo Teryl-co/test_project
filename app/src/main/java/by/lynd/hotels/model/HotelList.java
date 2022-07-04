@@ -7,15 +7,15 @@ import java.util.List;
 
 public class HotelList {
 
-    @SerializedName("hotels")
-    @Expose
-    private List<Hotel> hotels = null;
+  @SerializedName("hotels")
+  @Expose
+  private List<Hotel> hotels = null;
 
-    public List<Hotel> getHotels() {
-        return hotels;
-    }
+  public List<Hotel> getHotels() {
+    return hotels;
+  }
 
-    public void setHotels(List<Hotel> hotels) {
-        this.hotels = hotels;
-    }
+  public void setHotels(List<Hotel> hotels) {
+    this.hotels = hotels;
+  }
 }

@@ -1,24 +1,22 @@
 package by.lynd.hotels.contract;
 
 import android.content.Intent;
-
 import by.lynd.hotels.model.Hotel;
 
 public interface ItemContract {
+  interface Presenter {
+    void handleHotel(Intent intent);
 
-    interface Presenter {
-        void handleHotel(Intent intent);
+    void setUpButtonListener();
+  }
 
-        void setUpButtonListener();
-    }
+  interface View {
+    void setUpCallButtonListener(String number);
 
-    interface View {
-        void setUpCallButtonListener(String number);
+    void setUpEmailButtonListener(String... emails);
 
-        void setUpEmailButtonListener(String... emails);
+    void setUpItemView(Hotel hotel);
 
-        void setUpItemView(Hotel hotel);
-
-        void setUpLocationButtonListener(String location);
-    }
+    void setUpLocationButtonListener(String location);
+  }
 }

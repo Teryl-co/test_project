@@ -6,83 +6,87 @@ import com.google.gson.annotations.SerializedName;
 import java.io.Serializable;
 
 public class Hotel implements Serializable {
+  @SerializedName("name")
+  @Expose
+  private String name;
 
-    @SerializedName("name")
-    @Expose
-    private String name;
-    @SerializedName("desc")
-    @Expose
-    private String description;
-    @SerializedName("image")
-    @Expose
-    private String imageUrl;
-    @SerializedName("price")
-    @Expose
-    private Integer price;
-    @SerializedName("locale")
-    @Expose
-    private String locale;
-    @SerializedName("number")
-    @Expose
-    private String number;
-    @SerializedName("email")
-    @Expose
-    private String email;
+  @SerializedName("desc")
+  @Expose
+  private String description;
 
-    public String getName() {
-        return name;
-    }
+  @SerializedName("image")
+  @Expose
+  private String imageUrl;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  @SerializedName("price")
+  @Expose
+  private Integer price;
 
-    public String getDescription() {
-        return description;
-    }
+  @SerializedName("locale")
+  @Expose
+  private String locale;
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+  @SerializedName("number")
+  @Expose
+  private String number;
 
-    public String getImageUrl() {
-        return imageUrl;
-    }
+  @SerializedName("email")
+  @Expose
+  private String email;
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public Integer getPrice() {
-        return price;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public void setPrice(Integer price) {
-        this.price = price;
-    }
+  public String getDescription() {
+    return description;
+  }
 
-    public String getLocale() {
-        return locale;
-    }
+  public void setDescription(String description) {
+    this.description = description;
+  }
 
-    public void setLocale(String locale) {
-        this.locale = locale;
-    }
+  public String getImageUrl() {
+    return imageUrl;
+  }
 
-    public String getNumber() {
-        return number;
-    }
+  public void setImageUrl(String imageUrl) {
+    this.imageUrl = imageUrl;
+  }
 
-    public void setNumber(String number) {
-        this.number = number;
-    }
+  public Integer getPrice() {
+    return price;
+  }
 
-    public String getEmail() {
-        return email;
-    }
+  public void setPrice(Integer price) {
+    this.price = price;
+  }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+  public String getLocale() {
+    return locale;
+  }
 
+  public void setLocale(String locale) {
+    this.locale = locale;
+  }
+
+  public String getNumber() {
+    return number;
+  }
+
+  public void setNumber(String number) {
+    this.number = number;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
 }
