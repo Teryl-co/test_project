@@ -4,9 +4,7 @@ import by.lynd.hotels.contract.MainContract;
 import by.lynd.hotels.model.Hotel;
 import by.lynd.hotels.model.HotelList;
 import by.lynd.hotels.rest.RetroClient;
-
 import java.util.List;
-
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

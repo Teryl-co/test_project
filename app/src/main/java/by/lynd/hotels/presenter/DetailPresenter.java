@@ -1,7 +1,6 @@
 package by.lynd.hotels.presenter;
 
 import android.content.Intent;
-
 import by.lynd.hotels.contract.ItemContract;
 import by.lynd.hotels.contract.MainContract;
 import by.lynd.hotels.model.Hotel;
