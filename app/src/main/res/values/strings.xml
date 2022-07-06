@@ -3,4 +3,8 @@
   <string name="send_button">Send</string>
   <string name="call_button">Call</string>
   <string name="find_location">Find Out The Location</string>
+  <string name="price_detail">Price:</string>
+  <string name="phone_detail">Phone:</string>
+  <string name="email_detail">Email:</string>
+  <string name="description_detail">Description: \n</string>
 </resources>

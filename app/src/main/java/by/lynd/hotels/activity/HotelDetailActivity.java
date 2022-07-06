@@ -2,7 +2,6 @@ package by.lynd.hotels.activity;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +9,7 @@ import by.lynd.hotels.R;
 import by.lynd.hotels.contract.ItemContract;
 import by.lynd.hotels.model.Hotel;
 import by.lynd.hotels.presenter.DetailPresenter;
+import by.lynd.hotels.util.ButtonUtil;
 import com.bumptech.glide.Glide;
 
 public class HotelDetailActivity extends AppCompatActivity implements ItemContract.View {
@@ -44,20 +44,20 @@ public class HotelDetailActivity extends AppCompatActivity implements ItemContra
 
   @Override
   public void setUpCallButtonListener(String number) {
-    Button button = findViewById(R.id.button_call);
-    button.setOnClickListener(view -> startActivity(UtilActivity.call(number)));
+    android.widget.Button button = findViewById(R.id.button_call);
+    button.setOnClickListener(view -> startActivity(ButtonUtil.call(number)));
   }
 
   @Override
   public void setUpEmailButtonListener(String... emails) {
-    Button button = findViewById(R.id.button_send_email);
-    button.setOnClickListener(view -> startActivity(UtilActivity.sendEmail(emails)));
+    android.widget.Button button = findViewById(R.id.button_send_email);
+    button.setOnClickListener(view -> startActivity(ButtonUtil.sendEmail(emails)));
   }
 
   @Override
   public void setUpLocationButtonListener(String location) {
-    Button button = findViewById(R.id.button_find_location);
-    button.setOnClickListener(view -> startActivity(UtilActivity.findLocation(location)));
+    android.widget.Button button = findViewById(R.id.button_find_location);
+    button.setOnClickListener(view -> startActivity(ButtonUtil.findLocation(location)));
   }
 
   @Override
@@ -70,9 +70,9 @@ public class HotelDetailActivity extends AppCompatActivity implements ItemContra
 
     Glide.with(this).load(hotel.getImageUrl()).into(image);
 
-    price.setText("Price: " + hotel.getPrice());
-    email.setText("Email: " + hotel.getEmail());
-    phone.setText("Phone: " + hotel.getNumber());
-    description.setText("Description:\n" + hotel.getDescription());
+    price.append(hotel.getPrice().toString());
+    email.append(hotel.getEmail());
+    phone.append(hotel.getNumber());
+    description.append(hotel.getDescription());
   }
 }
