@@ -13,8 +13,8 @@ public class MainPresenter implements MainContract.Presenter {
   private static final String NO_AVAILABLE_HOTELS = "No available hotels";
   private static final String NO_AVAILABLE_SERVER = "Server is down";
 
-  private MainContract.Model model;
-  private MainContract.View activity;
+  private final MainContract.Model model;
+  private final MainContract.View activity;
   private List<Hotel> hotels;
 
   public MainPresenter(MainContract.View activity) {

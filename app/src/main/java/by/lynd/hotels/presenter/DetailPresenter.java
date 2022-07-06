@@ -2,14 +2,11 @@ package by.lynd.hotels.presenter;
 
 import android.content.Intent;
 import by.lynd.hotels.contract.ItemContract;
-import by.lynd.hotels.contract.MainContract;
 import by.lynd.hotels.model.Hotel;
 
 public class DetailPresenter implements ItemContract.Presenter {
   private Hotel hotel;
-
-  private MainContract.Model model;
-  private ItemContract.View activity;
+  private final ItemContract.View activity;
 
   public DetailPresenter(ItemContract.View activity) {
     this.activity = activity;
