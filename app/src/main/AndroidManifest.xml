@@ -18,7 +18,8 @@
       android:exported="false"
       android:name=".activity.HotelDetailActivity"
       android:parentActivityName=".activity.MainActivity"
-      android:theme="@style/Theme.Hotels">
+      android:theme="@style/Theme.Hotels"
+      android:screenOrientation="portrait">
       <meta-data
         android:name="android.support.PARENT_ACTIVITY"
         android:value=".activity.MainActivity" />

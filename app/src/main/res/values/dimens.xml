@@ -8,4 +8,5 @@
   <dimen name="text_size">16dp</dimen>
   <dimen name="margin_between_img_text">30dp</dimen>
   <dimen name="recycler">0dp</dimen>
+  <dimen name="zero">0dp</dimen>
 </resources>

@@ -38,19 +38,17 @@
 
         <TextView
           android:id="@+id/hotel_detail_phone"
-          android:layout_width="wrap_content"
+          android:layout_width="@dimen/zero"
           android:layout_height="wrap_content"
-          android:layout_marginTop="@dimen/margin"
-          android:layout_marginHorizontal="@dimen/margin"
+          android:layout_margin="@dimen/margin"
+          android:layout_gravity="center_vertical"
+          android:layout_weight="@integer/text_weight"
           android:text="@string/phone_detail" />
 
         <Button
           android:id="@+id/button_call"
           android:layout_width="wrap_content"
-          android:layout_height="match_parent"
-          android:layout_marginStart="@dimen/margin_start_button"
-          android:layout_gravity="center_horizontal"
-          android:elegantTextHeight="true"
+          android:layout_height="wrap_content"
           android:text="@string/call_button" />
 
       </LinearLayout>
@@ -62,18 +60,17 @@
 
         <TextView
           android:id="@+id/hotel_detail_email"
-          android:layout_width="wrap_content"
+          android:layout_width="@dimen/zero"
           android:layout_height="wrap_content"
-          android:layout_marginTop="@dimen/margin"
-          android:layout_marginHorizontal="@dimen/margin"
+          android:layout_margin="@dimen/margin"
+          android:layout_gravity="center_vertical"
+          android:layout_weight="@integer/text_weight"
           android:text="@string/email_detail" />
 
         <Button
           android:id="@+id/button_send_email"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_marginStart="@dimen/margin_start_button"
-          android:layout_gravity="center_horizontal"
           android:text="@string/send_button" />
 
       </LinearLayout>
