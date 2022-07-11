@@ -10,7 +10,6 @@
     android:id="@+id/list_hotels"
     android:layout_width="@dimen/recycler"
     android:layout_height="@dimen/recycler"
-    android:layout_margin="@dimen/margin"
     app:layoutManager="LinearLayoutManager"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
