@@ -27,6 +27,28 @@
     app:layout_constraintTop_toBottomOf="@+id/hotel_detail_image" />
 
   <TextView
+    android:id="@+id/hotel_detail_price"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin"
+    android:layout_marginStart="@dimen/margin"
+    android:text="@string/value"
+    android:textSize="@dimen/detail_name_price_size"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/hotel_detail_name" />
+
+  <TextView
+    android:id="@+id/hotel_detail_desc"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin"
+    android:layout_marginStart="@dimen/margin"
+    android:text="@string/description_detail"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/hotel_detail_price" />
+
+  <TextView
     android:id="@+id/hotel_detail_phone"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -35,6 +57,16 @@
     android:text="@string/phone_detail"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/hotel_detail_desc" />
+
+  <Button
+    android:id="@+id/button_call"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin"
+    android:layout_marginStart="@dimen/margin"
+    android:text="@string/call_button"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/hotel_detail_phone" />
 
   <TextView
     android:id="@+id/hotel_detail_email"
@@ -57,27 +89,6 @@
     app:layout_constraintTop_toBottomOf="@+id/hotel_detail_email" />
 
   <Button
-    android:id="@+id/button_call"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/margin"
-    android:layout_marginStart="@dimen/margin"
-    android:text="@string/call_button"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/hotel_detail_phone" />
-
-  <TextView
-    android:id="@+id/hotel_detail_desc"
-    android:layout_width="0dp"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/margin"
-    android:layout_marginStart="@dimen/margin"
-    android:text="@string/description_detail"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/hotel_detail_price" />
-
-  <Button
     android:id="@+id/button_find_location"
     android:layout_width="0dp"
     android:layout_height="wrap_content"
@@ -85,16 +96,5 @@
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent" />
-
-  <TextView
-    android:id="@+id/hotel_detail_price"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/margin"
-    android:layout_marginStart="@dimen/margin"
-    android:text="@string/value"
-    android:textSize="@dimen/detail_name_price_size"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/hotel_detail_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

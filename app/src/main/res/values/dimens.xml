@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <dimen name="image_item_width">100dp</dimen>
-  <dimen name="image_item_height">90dp</dimen>
   <dimen name="margin">16dp</dimen>
-  <dimen name="item_text_size">16dp</dimen>
+  <dimen name="margin_start">32dp</dimen>
+  <dimen name="item_name_size">20sp</dimen>
+  <dimen name="item_price_size">16sp</dimen>
+  <dimen name="item_height_image">100dp</dimen>
+  <dimen name="item_width_image">125dp</dimen>
   <dimen name="detail_name_price_size">26sp</dimen>
-  <dimen name="margin_between_img_text">30dp</dimen>
   <dimen name="recycler">0dp</dimen>
   <dimen name="zero">0dp</dimen>
 </resources>
