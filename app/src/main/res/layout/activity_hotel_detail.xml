@@ -5,94 +5,96 @@
   android:layout_height="match_parent"
   android:orientation="vertical">
 
-  <LinearLayout
-    android:layout_width="match_parent"
+  <ImageView
+    android:id="@+id/hotel_detail_image"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:scaleType="centerCrop"
+    app:layout_constraintDimensionRatio="w,1:2"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+    android:id="@+id/hotel_detail_name"
+    android:layout_width="0dp"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+    android:layout_marginTop="@dimen/margin"
+    android:layout_marginStart="@dimen/margin"
+    android:textSize="@dimen/detail_name_price_size"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/hotel_detail_image" />
 
-    <ImageView
-      android:id="@+id/hotel_detail_image"
-      android:layout_width="@dimen/image_size"
-      android:layout_height="@dimen/image_size"
-      android:layout_gravity="center_horizontal"
-      android:scaleType="centerCrop" />
+  <TextView
+    android:id="@+id/hotel_detail_phone"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin"
+    android:layout_marginStart="@dimen/margin"
+    android:text="@string/phone_detail"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/hotel_detail_desc" />
 
-    <LinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="vertical">
+  <TextView
+    android:id="@+id/hotel_detail_email"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin"
+    android:layout_marginStart="@dimen/margin"
+    android:text="@string/email_detail"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/button_call" />
 
-      <TextView
-        android:id="@+id/hotel_detail_price"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/margin"
-        android:text="@string/price_detail" />
+  <Button
+    android:id="@+id/button_send_email"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin"
+    android:layout_marginStart="@dimen/margin"
+    android:text="@string/send_button"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/hotel_detail_email" />
 
-      <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+  <Button
+    android:id="@+id/button_call"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin"
+    android:layout_marginStart="@dimen/margin"
+    android:text="@string/call_button"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/hotel_detail_phone" />
 
-        <TextView
-          android:id="@+id/hotel_detail_phone"
-          android:layout_width="@dimen/zero"
-          android:layout_height="wrap_content"
-          android:layout_margin="@dimen/margin"
-          android:layout_gravity="center_vertical"
-          android:layout_weight="@integer/text_weight"
-          android:text="@string/phone_detail" />
+  <TextView
+    android:id="@+id/hotel_detail_desc"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin"
+    android:layout_marginStart="@dimen/margin"
+    android:text="@string/description_detail"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/hotel_detail_price" />
 
-        <Button
-          android:id="@+id/button_call"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="@string/call_button" />
+  <Button
+    android:id="@+id/button_find_location"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:text="@string/find_location_button"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent" />
 
-      </LinearLayout>
-
-      <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-          android:id="@+id/hotel_detail_email"
-          android:layout_width="@dimen/zero"
-          android:layout_height="wrap_content"
-          android:layout_margin="@dimen/margin"
-          android:layout_gravity="center_vertical"
-          android:layout_weight="@integer/text_weight"
-          android:text="@string/email_detail" />
-
-        <Button
-          android:id="@+id/button_send_email"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="@string/send_button" />
-
-      </LinearLayout>
-
-      <TextView
-        android:id="@+id/hotel_detail_desc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin"
-        android:layout_marginHorizontal="@dimen/margin"
-        android:text="@string/description_detail"/>
-
-      <Button
-        android:id="@+id/button_find_location"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin"
-        android:layout_marginHorizontal="@dimen/margin"
-        android:text="@string/find_location" />
-
-    </LinearLayout>
-
-  </LinearLayout>
+  <TextView
+    android:id="@+id/hotel_detail_price"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin"
+    android:layout_marginStart="@dimen/margin"
+    android:text="@string/value"
+    android:textSize="@dimen/detail_name_price_size"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/hotel_detail_name" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

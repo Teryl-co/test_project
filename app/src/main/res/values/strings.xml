@@ -2,9 +2,9 @@
   <string name="app_name">Hotels</string>
   <string name="send_button">Send</string>
   <string name="call_button">Call</string>
-  <string name="find_location">Find Out The Location</string>
-  <string name="price_detail">Price:</string>
+  <string name="find_location_button">Find Out The Location</string>
   <string name="phone_detail">Phone:</string>
   <string name="email_detail">Email:</string>
   <string name="description_detail">Description: \n</string>
+  <string name="value">$</string>
 </resources>

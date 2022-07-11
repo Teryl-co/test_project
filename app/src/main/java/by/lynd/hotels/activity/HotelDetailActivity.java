@@ -63,6 +63,7 @@ public class HotelDetailActivity extends AppCompatActivity implements ItemContra
   @Override
   public void setUpItemView(Hotel hotel) {
     ImageView image = findViewById(R.id.hotel_detail_image);
+    TextView name = findViewById(R.id.hotel_detail_name);
     TextView price = findViewById(R.id.hotel_detail_price);
     TextView email = findViewById(R.id.hotel_detail_email);
     TextView phone = findViewById(R.id.hotel_detail_phone);
@@ -70,6 +71,7 @@ public class HotelDetailActivity extends AppCompatActivity implements ItemContra
 
     Glide.with(this).load(hotel.getImageUrl()).into(image);
 
+    name.setText(hotel.getName());
     price.append(hotel.getPrice().toString());
     email.append(hotel.getEmail());
     phone.append(hotel.getNumber());
