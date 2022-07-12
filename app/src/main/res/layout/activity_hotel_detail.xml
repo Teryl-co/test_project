@@ -32,7 +32,6 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/margin"
     android:layout_marginStart="@dimen/margin"
-    android:text="@string/value"
     android:textSize="@dimen/detail_name_price_size"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/hotel_detail_name" />
@@ -43,7 +42,6 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/margin"
     android:layout_marginStart="@dimen/margin"
-    android:text="@string/description_detail"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/hotel_detail_price" />
@@ -54,7 +52,6 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/margin"
     android:layout_marginStart="@dimen/margin"
-    android:text="@string/phone_detail"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/hotel_detail_desc" />
 
@@ -64,7 +61,6 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/margin"
     android:layout_marginStart="@dimen/margin"
-    android:text="@string/call_button"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/hotel_detail_phone" />
 
@@ -74,7 +70,6 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/margin"
     android:layout_marginStart="@dimen/margin"
-    android:text="@string/email_detail"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/button_call" />
 
@@ -84,7 +79,6 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/margin"
     android:layout_marginStart="@dimen/margin"
-    android:text="@string/send_button"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/hotel_detail_email" />
 

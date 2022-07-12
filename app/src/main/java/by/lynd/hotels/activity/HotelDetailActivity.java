@@ -72,7 +72,7 @@ public class HotelDetailActivity extends AppCompatActivity implements ItemContra
     Glide.with(this).load(hotel.getImageUrl()).into(image);
 
     name.setText(hotel.getName());
-    price.setText(getString(R.string.value) + hotel.getPrice());
+    price.setText(getString(R.string.dollar) + hotel.getPrice());
     email.setText(getString(R.string.email_detail) + hotel.getEmail());
     phone.setText(getString(R.string.phone_detail) + hotel.getNumber());
     description.setText(getString(R.string.description_detail) + hotel.getDescription());

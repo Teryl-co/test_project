@@ -18,8 +18,7 @@
       android:exported="false"
       android:name=".activity.HotelDetailActivity"
       android:parentActivityName=".activity.MainActivity"
-      android:theme="@style/Theme.Hotels"
-      android:screenOrientation="portrait">
+      android:theme="@style/Theme.Hotels">
       <meta-data
         android:name="android.support.PARENT_ACTIVITY"
         android:value=".activity.MainActivity" />
@@ -39,9 +38,10 @@
     </activity>
 
   </application>
-  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-  <uses-permission android:name="android.permission.CALL_PHONE" />
 
   <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+  <uses-permission android:name="android.permission.CALL_PHONE" />
 
 </manifest>
