@@ -19,9 +19,6 @@
       android:name=".activity.HotelDetailActivity"
       android:parentActivityName=".activity.MainActivity"
       android:theme="@style/Theme.Hotels">
-      <meta-data
-        android:name="android.support.PARENT_ACTIVITY"
-        android:value=".activity.MainActivity" />
     </activity>
 
     <activity

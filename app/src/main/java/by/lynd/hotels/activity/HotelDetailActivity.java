@@ -5,6 +5,7 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import by.lynd.hotels.R;
 import by.lynd.hotels.contract.ItemContract;
 import by.lynd.hotels.model.Hotel;
@@ -19,6 +20,8 @@ public class HotelDetailActivity extends AppCompatActivity implements ItemContra
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_hotel_detail);
+    Toolbar toolbar = findViewById(R.id.toolbar);
+    setSupportActionBar(toolbar);
     getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     presenter = new DetailPresenter(this);
@@ -29,17 +32,6 @@ public class HotelDetailActivity extends AppCompatActivity implements ItemContra
     super.onStart();
     presenter.handleHotel(getIntent());
     presenter.setUpButtonListener();
-  }
-
-  @Override
-  public boolean onOptionsItemSelected(MenuItem item) {
-
-    if (item.getItemId() == android.R.id.home) {
-      finish();
-      return true;
-    }
-
-    return super.onOptionsItemSelected(item);
   }
 
   @Override
